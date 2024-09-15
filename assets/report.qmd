@@ -1,0 +1,159 @@
+---
+title: "Random report"
+author: 
+  - name: Jane Doe
+    orcid: 0000-0001-2345-6789
+    corresponding: true
+    email: Jane.Doe@example.org
+    
+---
+
+<!-- 
+
+Instructions for the exercise
+
+1. Move the file to the top level of your repository
+4. Update the file _quarto.yml in your repository to include the report in your webpage
+2. Load a dataset from https://github.com/Hezel2000/GeoCosmoChemDataAndTools/tree/main/csv
+3. Update the YAML header of this file
+3. Create a short report, including plots created from the dataset (they can be interactive if you want -- the result is a webpage)
+  a. You can use the example code chunks below as inspiration and for reference for the chunk options
+  b. You might the following pages useful for reference: 
+      Figures: https://quarto.org/docs/authoring/figures.html
+      Tables: https://quarto.org/docs/authoring/tables.html
+
+The remainder of the document is a small example of how it might look like and provides some help to get started. Compare the unrendered and the rendered version to learn how it looks like! 
+
+By the way, to include Python code, replace write `python` instead of `r` in the curly brackets at the top of a code chunk. 
+
+--> 
+
+## The randomness of R
+
+Because there must be some content for inspiration, let's see how random random numbers in R really are. 
+
+## Uniformly distributed random numbers
+
+Uniformly distributed random number means that all number have the same chance to get drawn from the pool. There are multiple methods to produce such numbers. 
+
+The most common command to create a uniform distribution of random numbers in R is `runif()`, standing for **r**andom **unif**orm. There is also the command `sample()` which is a bit more complex and therefore not further discussed here. 
+
+By default, `runif()` samples the range from 0 to 1: 
+
+``` {r}
+
+runif(1)
+
+runif(10)
+
+``` 
+
+This range can be changed by providing additional arguments: 
+
+``` {r}
+
+runif(1, min = 6, max = 9)
+
+runif(10, min = 4, max = 20)
+
+``` 
+
+Sometimes, integers are needed. This can be achieved with 
+
+``` {r}
+
+floor(runif(1, min = 1, max = 6))
+
+``` 
+
+With this information, let's see how random R throws a D20! 
+
+``` {r}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "10 rolls"
+#|   - "100 rolls"
+#|   - "1000 rolls" 
+#|   - "10000 rolls"
+#| echo: false
+
+hist(runif(10, min = 1, max = 20), breaks = seq(from = 0.5, to = 20.5), main = NULL)
+hist(runif(100, min = 1, max = 20), breaks = seq(from = 0.5, to = 20.5), main = NULL)
+hist(runif(1000, min = 1, max = 20), breaks = seq(from = 0.5, to = 20.5), main = NULL)
+hist(runif(10000, min = 1, max = 20), breaks = seq(from = 0.5, to = 20.5), main = NULL)
+
+```
+
+And now let's check if the distribution is consistent within the same number of rolls: 
+
+``` {r}
+#| layout-ncol: 5
+#| echo: false
+
+for (i in seq_along(1:10)) {
+  hist(runif(10, min = 1, max = 20), breaks = seq(from = 0.5, to = 20.5), main = NULL)
+}
+
+```
+
+# Normally distributed random numbers
+
+R cannot also create numbers from a normal distribution with the command `rnorm()` (= **r**andom **normal**). The syntax of the function is similar to `runif()` but instead of defining minimum and maximum of a function, we give the mean and the standard deviation ($sd$) of the normal distribution: 
+
+``` {r}
+
+rnorm(5)
+
+rnorm(5, mean = 50, sd = 5)
+
+```
+
+Let's repeat the same test as above: 
+
+``` {r}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "10 draws"
+#|   - "100 draws"
+#|   - "1000 draws" 
+#|   - "10000 draws"
+#| echo: false
+
+hist(rnorm(10, mean = 50, sd = 5), main = NULL)
+hist(rnorm(100, mean = 50, sd = 5), main = NULL)
+hist(rnorm(1000, mean = 50, sd = 5), main = NULL)
+hist(rnorm(10000, mean = 50, sd = 5), main = NULL)
+
+```
+
+And performance in repeated identical draws. However, this time we will draw 50 times because 10 is too few to make the normal distribution visible: 
+
+``` {r}
+#| layout-ncol: 5
+#| echo: false
+
+for (i in seq_along(1:10)) {
+  hist(rnorm(50, mean = 50, sd = 5), main = NULL)
+}
+
+```
+
+
+If you forgot how the standard deviation is calculated (and because I wanted to include a more complex formula for instructive purposes): 
+
+$$
+\sigma = \sqrt{\frac{\sum{(x_i-\mu)^2}}{N}} 
+$$
+with: 
+
+| Symbol || Explanation |
+|----:|----|:----|
+|$\sigma$| = | Population standard deviation| 
+|$N$| = | Size of population |
+|x~i~| = | each value from the population |
+|µ| = | mean of the population |
+
+# Conclusions
+As expected, the number from random distributions are pretty random 
+
+Have fun while doing the exercise and don't hesitate to ask for help! 
