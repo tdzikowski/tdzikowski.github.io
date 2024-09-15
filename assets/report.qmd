@@ -13,10 +13,11 @@ author:
 Instructions for the exercise
 
 1. Move the file to the top level of your repository
-4. Update the file _quarto.yml in your repository to include the report in your webpage
-2. Load a dataset from https://github.com/Hezel2000/GeoCosmoChemDataAndTools/tree/main/csv
-3. Update the YAML header of this file
-3. Create a short report, including plots created from the dataset (they can be interactive if you want -- the result is a webpage)
+2. Update the file _quarto.yml in your repository to include the report in your webpage
+3. Load a dataset from https://github.com/Hezel2000/GeoCosmoChemDataAndTools/tree/main/csv
+4. Update the YAML header of this file
+5. Replace the CI/CD pipeline with the one provided in the assets folder
+6. Create a short report, including plots created from the dataset (they can be interactive if you want -- the result is a webpage)
   a. You can use the example code chunks below as inspiration and for reference for the chunk options
   b. You might the following pages useful for reference: 
       Figures: https://quarto.org/docs/authoring/figures.html
