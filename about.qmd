@@ -1,5 +1,5 @@
 ---
-title: "Thomas Rose"
+title: "Tashia D"
 about:
   id: template-area
   template: jolla
@@ -30,13 +30,13 @@ Here goes the information about you.
 ## Legal Notice
 
 Provider according to § 5 TMG is:  
-Thomas Rose  
-Fahrenheitstr. 52  
-44879 Bochum  
+Tashia
+XXstr. 52  
+79110 Freiburg  
 Germany  
 
-Phone +49 1522 3176524  
-E-Mail: thomas.rose [at] daad-alumni.de
+Phone +49 1500 55225522  
+E-Mail: tashia.dd [at] email.com
 
 ## Privacy
 
