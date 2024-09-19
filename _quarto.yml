@@ -13,7 +13,7 @@ website:
       - text: "About me"
         href: about.qmd
       - text: 'Report'
-        href: assests/report.qmd
+        href: assets/report.qmd
 
 format:
   html:
