@@ -32,7 +32,7 @@
     "href": "assets/report.html",
     "title": "Random report",
     "section": "",
-    "text": "```\nimport pandas as pd import matplot.lib as plt data = pd.read_csv(‘https://raw.githubusercontent.com/Hezel2000/GeoCosmoChemDataAndTools/refs/heads/main/csv/Bastar%20Craton.csv’)\nCOLUMNS = df.keys() plt.plot(data[COLUMNS[0]], data[COLUMNS[1]],) plt.show()"
+    "text": "import pandas as pd\nimport matplot.lib as plt\ndata = pd.read_csv('https://raw.githubusercontent.com/Hezel2000/GeoCosmoChemDataAndTools/refs/heads/main/csv/Bastar%20Craton.csv')\n\nCOLUMNS = df.keys()\nplt.plot(data[COLUMNS[0]], data[COLUMNS[1]],)\nplt.show()"
   },
   {
     "objectID": "index.html",

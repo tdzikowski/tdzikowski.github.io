@@ -179,9 +179,15 @@ Add between lines 15 and 16:
 Make sure identations are correct! 
 
 -->
-<p>```</p>
-<p>import pandas as pd import matplot.lib as plt data = pd.read_csv(‘https://raw.githubusercontent.com/Hezel2000/GeoCosmoChemDataAndTools/refs/heads/main/csv/Bastar%20Craton.csv’)</p>
-<p>COLUMNS = df.keys() plt.plot(data[COLUMNS[0]], data[COLUMNS[1]],) plt.show()</p>
+<pre><code>
+import pandas as pd
+import matplot.lib as plt
+data = pd.read_csv('https://raw.githubusercontent.com/Hezel2000/GeoCosmoChemDataAndTools/refs/heads/main/csv/Bastar%20Craton.csv')
+
+COLUMNS = df.keys()
+plt.plot(data[COLUMNS[0]], data[COLUMNS[1]],)
+plt.show()
+</code></pre>
 
 
 
